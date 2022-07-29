@@ -2,7 +2,7 @@ import useWindowWidth from '../hooks/useWindowWidth'
 
 const LoyoutComponents = () => {
  
-  const onSmallScreen = useWindowWidth()
+  const onSmallScreen = useWindowWidth(600)
      
   return (
     <div>
