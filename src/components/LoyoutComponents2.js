@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from "react";
+import useWindowWidth from '../hooks/useWindowWidth'
 
 const LoyoutComponents2 = () => {
-  const [onSmallScreen, setOnSmallScreen] = useState(false);
-  const checkScreenSize = () => {
-    //window.innerWith jodi 768 er niche chole jay tiale inner with true hoye jabe
-    setOnSmallScreen(window.innerWidth < 768);
-  };
+  // const [onSmallScreen, setOnSmallScreen] = useState(false);
+  // const checkScreenSize = () => {
+  //   //window.innerWith jodi 768 er niche chole jay tiale inner with true hoye jabe
+  //   setOnSmallScreen(window.innerWidth < 768);
+  // };
 
-  useEffect(() => {
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener ('resize', checkScreenSize);
-  }, []);
+  // useEffect(() => {
+  //   checkScreenSize();
+  //   window.addEventListener('resize', checkScreenSize);
+  //   return () => window.removeEventListener ('resize', checkScreenSize);
+  // }, []);
+
+  const onSmallScreen = useWindowWidth()
+
 
   return (
     <div className={onSmallScreen ? 'small' : 'large'}>
